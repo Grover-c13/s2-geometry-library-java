@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+group = 'org.jnegre.google'
+version = '1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+    test {
+        java {
+            srcDir 'tests'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.guava:guava:r09'
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+
+    testCompile 'junit:junit:4.11'
+}
