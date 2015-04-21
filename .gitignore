@@ -1,4 +1,5 @@
 build/
 .idea
 .gradle
-s2-geometry-library-java.iml
+*.iml
+gradle.properties

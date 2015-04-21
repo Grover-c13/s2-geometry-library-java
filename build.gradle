@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'com.jfrog.bintray' version '1.1'
+}
 
 group = 'org.jnegre.google'
 version = '1.0'
@@ -26,4 +29,22 @@ dependencies {
     compile 'com.google.code.findbugs:jsr305:3.0.0'
 
     testCompile 'junit:junit:4.11'
+}
+
+bintray {
+    //from gradle.properties
+    user = project.property('bintrayUser')
+    key = project.property('bintrayKey')
+
+    configurations = ['archives']
+
+    pkg {
+        repo = 'maven'
+        name = "${project.group}:${project.name}"
+
+        issueTrackerUrl = 'https://github.com/jnegre/s2-geometry-library-java/issues'
+        vcsUrl = 'https://github.com/jnegre/s2-geometry-library-java.git'
+        licenses = ['Apache-2.0']
+    }
+
 }
