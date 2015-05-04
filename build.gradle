@@ -50,8 +50,8 @@ publishing {
 
 bintray {
     //from gradle.properties
-    user = project.property('bintrayUser')
-    key = project.property('bintrayKey')
+    user = project.hasProperty('bintrayUser')?project.property('bintrayUser'):'NO-USER'
+    key = project.hasProperty('bintrayKey')?project.property('bintrayKey'):'NO-KEY'
 
     //dryRun = true
 
